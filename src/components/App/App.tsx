@@ -13,11 +13,9 @@ function App() {
 
     return (
         <div className={styles.app}>
-            <header className={styles.header}>
-                <Profile user={userData.user}></Profile>
-                <LinkContainer linkList={userData.links}></LinkContainer>
-                <Footer user={userData.user}></Footer>
-            </header>
+            <Profile user={userData.user}></Profile>
+            <LinkContainer linkList={userData.links}></LinkContainer>
+            <Footer user={userData.user}></Footer>
         </div>
     );
 }
