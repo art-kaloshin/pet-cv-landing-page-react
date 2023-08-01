@@ -38,5 +38,5 @@ jobs:
         clean: true
         after-upload: |
           mv ${{ secrets.REMOTE_TARGET }}/build/* ${{ secrets.REMOTE_TARGET }}
-          rm ${{ secrets.REMOTE_TARGET }}/build/
-          wget "https://sms.ru/sms/send?api_id=7C35371F-E674-7810-D92D-B1E030DFD398&to=+79109759770&msg=CV_landing_Deploy_done&json=1" -o ${{ secrets.REMOTE_TARGET }}/notify.result >> ${{ secrets.REMOTE_TARGET }}/notify.output
+          rmdir ${{ secrets.REMOTE_TARGET }}/build/
+          wget "https://sms.ru/sms/send?api_id=7C35371F-E674-7810-D92D-B1E030DFD398&to=+79109759770&msg=CV_landing_Deploy_done&json=1" -o /dev/null
