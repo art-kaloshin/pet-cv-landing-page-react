@@ -26,13 +26,15 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - name: deploy
-      uses: easingthemes/ssh-deploy@main
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
-          SOURCE: "build/"
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_PORT: ${{ secrets.SSH_USER }}
-          REMOTE_USER: ${{ secrets.SSH_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-          EXCLUDE: "/dist/, /node_modules/"
+      uses: ilCollez/ssh-scp-deploy@v1.2.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        port: ${{ secrets.SSH_PORT }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        files: |
+          build
+        remote-path: "/var/www/html"
+        clean: true
+        after-upload: |
+          ls /var/www/html
