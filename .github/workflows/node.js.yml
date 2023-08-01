@@ -34,7 +34,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         files: |
           build
-        remote-path: ${{ secret.REMOTE_TARGET }}
+        remote-path: ${{ secrets.REMOTE_TARGET }}
         clean: true
         after-upload: |
           mv /var/www/html/build/* /var/www/html/
