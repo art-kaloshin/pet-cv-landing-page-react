@@ -5,7 +5,7 @@ name: Build & deploy
 
 on:
   push:
-    branches: [ "release" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -38,3 +38,5 @@ jobs:
         clean: true
         after-upload: |
           mv ${{ secrets.REMOTE_TARGET }}/build/* ${{ secrets.REMOTE_TARGET }}
+          rm ${{ secrets.REMOTE_TARGET }}/build/
+          wget "https://sms.ru/sms/send?api_id=7C35371F-E674-7810-D92D-B1E030DFD398&to=+79109759770&msg=Deploy_done" -o /dev/null
