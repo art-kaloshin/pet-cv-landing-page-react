@@ -37,5 +37,4 @@ jobs:
         remote-path: ${{ secrets.REMOTE_TARGET }}
         clean: true
         after-upload: |
-          mv /var/www/html/build/* /var/www/html/
-          rm /var/www/html/build/
+          mv ${{ secrets.REMOTE_TARGET }}/build/* ${{ secrets.REMOTE_TARGET }}
