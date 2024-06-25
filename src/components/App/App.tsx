@@ -8,7 +8,7 @@ function App() {
     const [userData, setUserData] = useState({"user": {}, "links": []})
 
     useEffect(() => {
-        fetch('/api/data.json').then((r) => r.json()).then((userDataJson) => setUserData(userDataJson))
+        fetch('/api/data.php').then((r) => r.json()).then((userDataJson) => setUserData(userDataJson))
     }, []);
 
     return (

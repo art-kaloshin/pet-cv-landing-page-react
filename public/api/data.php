@@ -1,3 +1,6 @@
+<?php
+
+$data = '
 {
   "user": {
     "name": "Artem Kaloshin",
@@ -34,3 +37,7 @@
     }
   ]
 }
+';
+
+header('Content-Type: application/json');
+echo str_replace('a.i.kaloshin@gmail.com', 'g' . date('Ymd') . '@v2u.su', $data);
