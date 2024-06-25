@@ -40,4 +40,4 @@ $data = '
 ';
 
 header('Content-Type: application/json');
-echo str_replace('a.i.kaloshin@gmail.com', 'g' . date('Ymd') . '@v2u.su', $data);
+echo str_replace('a.i.kaloshin@gmail.com', 'g' . date('ymd') . '@v2u.su', $data);
