@@ -39,4 +39,4 @@ jobs:
         after-upload: |
           mv ${{ secrets.REMOTE_TARGET }}/build/* ${{ secrets.REMOTE_TARGET }}
           rmdir ${{ secrets.REMOTE_TARGET }}/build/
-          wget "https://api.telegram.org/bot1299457880:AAFtM0wdNRXmgtwjKRgSiRHuoKIDui4lopk/sendmessage?chat_id=869413998&text=CV_landing_Deploy_done" -O /dev/null
+          wget "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendmessage?chat_id=869413998&text=CV_landing_Deployed" -O /dev/null
